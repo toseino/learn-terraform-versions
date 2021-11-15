@@ -33,6 +33,7 @@ resource "aws_instance" "web" {
   ami           = data.aws_ami.amazon_linux.id
   instance_type = "t2.micro"
   user_data     = file("init-script.sh")
+  subnet_id = "subnet-0c8b34a17761b1d5d"
 
   tags = {
     Name = random_pet.name.id
